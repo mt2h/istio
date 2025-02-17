@@ -59,7 +59,4 @@ minikube ip
 ```bash
 kubectl -n istio-system set image deploy/jaeger jaeger=jaegertracing/all-in-one:1.24
 kubectl -n istio-system set image deploy/kiali kiali=quay.io/kiali/kiali:v1.28
-kubectl -n istio-system rollout restart deploy istiod
-kubectl -n istio-system rollout restart deploy istio-egressgateway
-kubectl -n istio-system rollout restart deploy istio-ingressgateway
 ```

@@ -20,11 +20,17 @@ metadata:
   namespace: default
 spec:
   host: fleetman-staff-service # Service
+  #trafficPolicy:
+  #  loadBalancer:
+  #    consistentHash:
+  #      useSourceIp: true #Requests from the same IP are always routed to the same pod.
   trafficPolicy:
     loadBalancer:
       consistentHash:
-        httpHeaderName: "x-myval"
+        httpHeaderName: "x-myval" #The load balancer will hashing based on the value of the HTTP header x-myval. Allows affinity based on a custom value
   subsets:
     - labels:   # SELECTOR.
         app: staff-service # find pods with label "safe"
       name: all-staff-service-pods
+
+#Afinnity trafficPolicy It is used to maintain the continuity or state of a session, or to ensure that certain related requests always go to the same destination.

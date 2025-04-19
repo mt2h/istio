@@ -29,8 +29,10 @@ spec:
   host: fleetman-staff-service
   subsets:
     - labels:
+        app: staff-service
         version: safe
       name: safe
     - labels:
+        app: staff-service
         version: risky
       name: risky

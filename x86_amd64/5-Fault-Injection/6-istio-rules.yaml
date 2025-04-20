@@ -46,9 +46,11 @@ spec:
   host: fleetman-webapp
   subsets:
     - labels:
+        app: webapp
         version: original
       name: original
     - labels:
+        app: webapp
         version: experimental
       name: experimental
       
